@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #E6E6F0;
+}
+
+/* Parte do background atras da MENTORIA */
+body::before {
+  content: '';
+  width: 100%;
+  height: 368px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  background: #535971;
+}
+
+/* Alinha a parte do header com a pagina no GERAL */
+.page {
+  width: 736px;
+  margin: auto;
+}
+
+/* Alinha a parte do header */
+header {
+  width: 319px;
+
+  margin-top: 74px;
+}
+
+/* MENTORIA TITULO H1 */
+header h1 {
+  font-family: "Staatliches", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  color: #FFF;
+}
+
+/* Preencha o formulario abaixo pra agendar sua mentoria */
+header p {
+  font-family: 'Poppins';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  color: #FFF;
+}
+
+/* BaseShape do Formulario */
+form {
+  margin-top: 38px;
+  background: #FFFFFF;
+  border-radius: 8px 8px 0 0;
+  min-height: 300px;
+
+  padding: 64px;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* TIRA O BORDER INSUPORTAVEL DE DENTRO DO FORM */
+fieldset {
+  border: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+}
+
+.fieldset-wrapper input {
+  display: flex;
+  flex-direction: column;
+  gap: 500px;
+}
+
+/* Informacoes Pessoais / Mentor / Horarios e etc */
+fieldset legend {
+  font-family: "Staatliches";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px;
+
+  padding-bottom: 16px;
+  border-bottom: 1px solid #E6E6F0;
+  width: 100%;
+  margin-bottom: 36px;
+
+  color: #535971;
+}
+
+/* AUMENTA AS CAIXAS DE ENTRADA */
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+/* FONTE = NOME , SOBRENOME, EMAIL e ETC */
+.input-wrapper label {
+  color: #4E4958;
+
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* SPAN ex = (digite um email válido) */
+.input-wrapper label span {
+  margin-left: 12px;
+
+  font-size: 12px;
+  line-height: 20px;
+
+  color: #a9a7af;
+}
+/* FAZ O SPAN DAR UMA LEVE PISCADA QUANDO PASSAR O MOUSE EM CIMA */
+.input-wrapper label span:hover {
+  color: #6c6a71;
+}
+
+/* Para as caixas do nome e sobrnome se alinharem */
+.col-2 {
+  display: flex;
+  gap: 20px;
+}
+
+/* Tamanho e cor da caixa de entrada pras informacoes NOME E SOBRENOME */
+.col-2 input {
+  background: #FAFAFC;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+
+  height: 56px;
+
+  padding: 0 24px;
+
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #6c6a71;
+}
+
+.col-2 .input-wrapper {
+  width: 50%;
+
+}
+
+/* Tamanho e cor da caixa de entrada pras informacoes GERAIS */
+.input-wrapper input {
+  background: #FAFAFC;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+
+  height: 56px;
+
+  padding: 0 24px;
+
+
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #6c6a71;
+}
+
+/* ESPACAMENTO ex: NOME , SOBRENOME espaçando das CAIXAS DE ENTRADA */
+.input-wrapper label{
+  font-size: 14px;
+  line-height: 24px;
+
+  color: #4E4958;
+
+  margin-bottom: 8px;
+}
+
+input {
+  display: flex;
+  gap: 20px;
+
+  width: auto;
+}
+
+.col-3 {
+  display: flex;
+  gap: 20px;
+}
+
+.col-3 > div:nth-child(1) {
+  width: 100%;
+}
+
+footer {
+  background: #535971;
+
+  height: 136px;
+
+  padding: 40px 64px;
+
+  margin-bottom: 100px;
+
+  border-top: 1px solid #D6D6D6;
+  border-radius: 0 0 8px 8px;
+}
+
+footer .button {
+  height: 56px;
+  border-radius: 8px;
+  background: #04D361;
+  border: none;
+  width: 100%;
+
+
+  font-family: "Staatliches";
+
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  display: flex;
+  justify-content: center;
+
+  color: #FFF;
+}
+
+footer .button:hover {
+  background: #0e8142;
+}
