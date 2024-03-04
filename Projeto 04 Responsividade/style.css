@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Epilogue', 'sans-serif';
+
+  background: #ECE9FD;
+
+  padding: 60px 23px 60px;
+}
+
+main {
+  max-width: 330px;
+  margin: 0 auto;
+}
+
+/* Primeiro P dentro da nomeclatura main */
+main p:first-child {
+  color: #7158EF;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 32px;
+
+  margin-bottom: 17px;
+}
+
+/* H1 */
+h1 {
+  font-family: 'Epilogue', 'sans-serif';
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 48px;
+
+  color: #090039;
+
+  margin-bottom: 15px;
+}
+
+/* Subtexto abaixo do H1 */
+h1 + p {
+  color: rgba(10, 0, 57, 0.64);
+  line-height: 32px;
+
+  margin-bottom: 32px;
+}
+
+/* SAIBA MAIS LINK */
+a {
+  color: #090039;
+  text-decoration: none;
+  font-weight: bold;
+
+  margin-bottom: 72px;
+}
+
+/* ALTERACAO QUANDO PASSAR O MOUSE POR CIMA DO SAIBA MAIS  */
+a:hover {
+  color: #7158EF;
+}
+
+/* LISTA NAO ORDENADA */
+ul {
+  list-style: none;
+
+  margin-top: 72px;
+}
+
+/* Lista + numeros */
+ul li {
+  font-family: Epilogue;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+
+  width: 257px;
+
+  display: flex;
+  gap: 38px;
+}
+
+/* Margen de espaço entre os numeros */
+ul li + li {
+  margin-top: 32px;
+}
+
+/* Span + cor dos numeros */
+ul li span {
+  font-family: Epilogue;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 80px; /* 111.111% */
+  letter-spacing: -2px;
+
+  color: #090039;
+}
+
+/* MEDIA QUERIES = permite aplicar estilizações especificas para uma página web de acordo com certas condições = página possa se adequar ao layout de tela em diferentes tamanhos e tipos de mídia */
+@media (min-width: 700px) {
+  body {
+    padding-top: 80px;
+  }
+
+  main {
+    max-width: 1020px;
+    display: flex;
+    gap: 100px;
+  }
+
+  main > div {
+    max-width: 484px;
+  }
+
+  ul li {
+    gap: 53px;
+    max-width: 450px;
+    align-items: center;
+  }
+
+}
