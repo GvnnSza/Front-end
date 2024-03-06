@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* htlm = root */
+/* POSSO ALTERAR A COR DOS TEXTOS SO ALTERANDO A OPCAO HUE */
+:root {
+  font-size: 62.5%;
+
+  --hue: 180;
+  --color-base-white: hsl(0, 0%, 100%);
+  --color-base-gray-100: hsl(0, 0%, 96%);
+  --color-base-gray-300: hsl(var(--hue), 60%, 58%);
+  --color-base-gray-500: hsl(0, 0%, 24%);
+  --color-base-gray-900: hsl(var(--hue), 60%, 20%);
+}
+
+body {
+  font-size: 1.6rem;
+
+  background-color: var(--color-base-white);
+  color: var(--color-base-gray-900);
+}
+
+header {
+  --starY: -100%;
+  animation: move .2s;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(var(--starY));
+  }
+}
+
+/* Linha imaginaria aonde ficaria o conteudo geral na GRID */
+#app > * {
+  border: 1px solid red;
+}
+
+/* parte do GRID SENDO GERADO */
+#app {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  height: 100vh;
+}
+
+/* espacamento , largura e margin de espacamentos */
+.container {
+  padding: 1.6rem 3.2rem;
+  width: min(112rem, 100%);
+  margin: 0 auto;
+}
+
+/* aonde tudo esta acontecendo com o main (a rolagem do site apenas acontece no MAIN) */
+main {
+  overflow-y: scroll;
+
+  background-color: var(--color-base-gray-100);
+}
+
+/* ajustando as coisas em um display flex */
+header, nav, nav ul {
+  display: flex;
+  align-items: center;
+  gap: 7.2rem;
+
+  font-weight: 700;
+}
+
+/* parte do search ocupando espaço */
+header form {
+  flex: 1;
+}
+
+/* tirar os pontos da lista pois nao ha necessidade deles e alteracao do tamanho e cor do nav */
+nav ul {
+  list-style: none;
+  font-size: 1.8rem;
+  color: var(--color-base-gray-300);
+}
+
+/* galeria em destaque ou negrito */
+ul li.active {
+  color: var(--color-base-gray-900);
+}
+
+/* esconde o pesquise duplicado da pagina */
+.input-wrapper label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+/* barra de pesquisa */
+.input-wrapper input {
+  width: 100%;
+  padding: 1.6rem;
+
+  background-color: var(--color-base-gray-100);
+  border: none;
+  border-radius: 3rem;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+  opacity: 0.56;
+}
+
+/* letras dentro da barra de pesquisa */
+.input-wrapper input::placeholder {
+  color: var(--color-base-gray-500);
+}
+
+/* avatar */
+.avatar {
+  width: 4.2rem;
+  height: 4.2rem;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+/* GALERIA */
+main h1 {
+  padding-top: 1.6rem;
+  font-size: 2.4rem;
+}
+
+/* Imagens da galeria */
+.gallery {
+  margin-top: 3.2rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+}
+
+/* Parte abaixo das fotos e caixa dos textos + faz as imagens ficarem com a borda arredondada gracas ao overflow*/
+.item {
+  background-color: var(--color-base-white);
+  border-radius: .8rem;
+  overflow: hidden;
+
+  --delay: .2;
+  animation: appear .4s var(--delay) backwards;
+}
+
+/* TAMANHO DAS IMAGENS APRESENTADAS NO GRID e CSS Transicao */
+.item img {
+  width: 100%;
+  aspect-ratio: 16/9; /* LARGURA (16) / ALTURA (9) */
+  object-fit: cover;
+
+  /*transition: all 200ms ease-out;*/
+
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-delay: 1ms;
+  transition-timing-function: ease-out;
+
+  display: block;
+}
+
+/* FILTRO IMAGENS + animacao da imagem ( girando e crescendo quando passa o mouse em cima) */
+.item img:hover {
+  filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+  transform: scale(1.1) rotate(-2deg);
+}
+
+/* ESPACAMENTO */
+.details {
+  padding: 2.2rem;
+  background-color: var(--color-base-white);
+  z-index: 1;
+  pos
+}
+
+/* titulos */
+.details h2 {
+  font-size: 1.8rem;
+}
+
+/* espacamento das tags pro titulo (h2) */
+.tag {
+  margin-top: 1.2rem;
+}
+
+/* definicoes das tags */
+.tag span {
+  padding: .6rem;
+  background-color: var(--color-base-gray-100);
+  border-radius: .8rem;
+
+  line-height: 0;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* footer */
+footer p {
+  text-align: center;
+  padding: 1.6rem;
+  font-weight: 600;
+}
+
+footer {
+  --starY: 100%;
+  animation: move .2s;
+}
